@@ -1,3 +1,3 @@
 #Oracle Java 8 Ansible Role
 
-From [Paul Felby](https://coderwall.com/p/4ogyuw)
+Repurposed from the [RelateIQ's docker-oracle-java8 Dockerfile(https://github.com/relateiq/docker-oracle-java8)

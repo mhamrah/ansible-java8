@@ -1,13 +1,17 @@
-- name: add webupd8team
-  shell: echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu {{ ansible_distribution_release }} main" | tee -a /etc/apt/sources.list
-  sudo: yes
+#- name: add webupd8team
+#  shell: echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu {{ ansible_distribution_release }} main" | tee -a /etc/apt/sources.list
+#  sudo: yes
 
-- name: add webupd8team src
-  shell: echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu {{ ansible_distribution_release }} main" | tee -a /etc/apt/sources.list
-  sudo: yes  
+#- name: add key server
+#  shell: apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886
+#  sudo: yes
 
-- name: add key server
-  shell: apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886
+- name: add add-apt-repostory
+  apt: pkg=software-properties-common state=present update_cache=yes
+  sudo: yes 
+    
+- name: add webupd8 ppa
+  shell: add-apt-repository ppa:webupd8team/java -y
   sudo: yes
 
 - name: update

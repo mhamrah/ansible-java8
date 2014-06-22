@@ -1,9 +1,9 @@
 - name: add webupd8team
-  shell: echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" | tee -a /etc/apt/sources.list
+  shell: echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu {{ ansible_distribution_release }} main" | tee -a /etc/apt/sources.list
   sudo: yes
 
 - name: add webupd8team src
-  shell: echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu precise main" | tee -a /etc/apt/sources.list
+  shell: echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu {{ ansible_distribution_release }} main" | tee -a /etc/apt/sources.list
   sudo: yes  
 
 - name: add key server

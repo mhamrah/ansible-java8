@@ -10,6 +10,11 @@
   apt: pkg=software-properties-common state=present update_cache=yes
   sudo: yes 
     
+- name: add add-apt-repostory
+  apt: pkg=python-software-properties state=present update_cache=yes
+  sudo: yes 
+  when: ansible_distribution_release == "precise"
+
 - name: add webupd8 ppa
   shell: add-apt-repository ppa:webupd8team/java -y
   sudo: yes

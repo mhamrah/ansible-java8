@@ -16,8 +16,7 @@
   when: ansible_distribution_release == "precise"
 
 - name: add webupd8 ppa
-  shell: add-apt-repository ppa:webupd8team/java -y
-  sudo: yes
+  apt_repository: repo='ppa:webupd8team/java'
 
 - name: update
   shell: apt-get update
